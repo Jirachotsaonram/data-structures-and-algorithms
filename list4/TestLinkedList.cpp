@@ -29,15 +29,12 @@ int main()
     a.insert(4, b);
     b.advance();
     a.insert(1, b);
-
-    b.advance();
     a.insert(1, b);
     b = a.zeroth();
     b.advance();
     a.insert(2, b);
     b = a.zeroth();
     a.insert(8, b);
-    b = a.zeroth();
     a.insert(8, b);
     printList(a);
     return 0;
