@@ -1,31 +1,44 @@
-        #include "LinkedList.h"
-		#include "LinkedList.cpp"
-		
-		#include <iostream>
-		using namespace std;
+#include "LinkedList.h"
+#include "LinkedList.cpp"
 
-            // Simple print method
-        template <class Object>
-        void printList( const List<Object> & theList )
-        {
-            if( theList.isEmpty( ) )
-                cout << "Empty list" << endl;
-            else
-            {
-                ListItr<Object> itr = theList.first( );
-                for( ; !itr.isPastEnd( ); itr.advance( ) )
-                    cout << itr.retrieve( ) << " ";
-            }
+#include <iostream>
+using namespace std;
 
-            cout << endl;
-        }
+// Simple print method
+template <class Object>
+void printList(const List<Object> &theList)
+{
+    if (theList.isEmpty())
+        cout << "Empty list" << endl;
+    else
+    {
+        ListItr<Object> itr = theList.first();
+        for (; !itr.isPastEnd(); itr.advance())
+            cout << itr.retrieve() << " ";
+    }
 
-        int main( )
-        {
-			List<int> a;
-			ListItr<int> b;
-			b = a.zeroth();
+    cout << endl;
+}
 
+int main()
+{
+    cout << "Jirachot Saonram ID:6706021411288 = 4 1 1 2 8 8" << endl;
+    List<int> a;
+    ListItr<int> b;
+    b = a.zeroth();
+    a.insert(4, b);
+    b.advance();
+    a.insert(1, b);
 
-			return 0;
-        }
+    b.advance();
+    a.insert(1, b);
+    b = a.zeroth();
+    b.advance();
+    a.insert(2, b);
+    b = a.zeroth();
+    a.insert(8, b);
+    b = a.zeroth();
+    a.insert(8, b);
+    printList(a);
+    return 0;
+}
